@@ -1,0 +1,48 @@
+.image {
+    width: 800px;
+    margin: auto;
+    display:block;
+    max-width: 100%;
+    padding: 30px 0;
+}
+
+h1, .opener{
+    text-align: center;
+}
+
+.tribute-info {
+    margin: 10px 0;
+    line-height: 30px;
+    font-size:18px;
+}
+
+.quotes-ul {
+    line-height: 40px;
+    font-size:18px;
+}
+
+.tribute-div, .quotes-div {
+    margin: 30px 25% 0 30%;
+    width: 50%;  
+}
+
+.img-div {
+    text-align:center;
+    background-color:rgb(135, 133, 149);
+    color: white;
+    font-size: 20px;
+}
+
+.img-caption{
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.tribute-link {
+    text-align: center;
+    font-size:25px;
+    font-weight: 300;
+    margin: 0 0 0 50px;
+    width: auto;
+}

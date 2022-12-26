@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta "UTF-8">
+    <meta name="viewport" content="width-device-width", initial-scale="1.0">
+    <title>Survey Form Project</title>
+    <link rel="stylesheet" href="styles.css">   
+    </head>  
+  <body>
+    <h1 id="title">Magic Player Survey</h1>
+    <p id="description">Learning to code</p>
+  <!-- Required Info--> 
+    <form id="survey-form">  
+      <fieldset class="personal">
+        <label>Personal Information</label>
+        <label id="name-label" for="name">Name:</label>
+          <input id="name" type="text" placeholder="Johnny Walker" required>
+        <label id="email-label" for="email">Email:</label>
+          <input id="email" type="email" placeholder="jw2BIG4U@yahoo.com" required>
+       <label id="number-label" for="number">Years of Experience:</label>
+          <input id="number" type="number" min="0" max="30" placeholder="5" required>
+      </fieldset>
+  <!-- Optional Fields-->
+  <!--Selection of Fav Deck Type via Dropdown Menu--> 
+      <fieldset class="deck-type">
+        <label id="deck-type">Indicate your fav type of deck:</label>
+          <select id="dropdown" name="deck-type">
+            <option value="">(select one)</option>
+            <option value="1">Aggro</option>
+            <option value="2">Combo</option>
+            <option value="3">Control</option>
+            <option value="4">Value (midrange)</option>
+         </select>  
+      </fieldset>
+  <!--Selection of Fav Magic Color via Radio Options--> 
+      <fieldset class="fav-color">
+        <label for="fav-color">Select your favorite color in Magic:</label>
+        <label for="white">White</label>
+        <input type="radio" id="white" name="format" value="white"class="block">
+        <label for="blue">Blue</label>
+          <input type="radio" id="blue" name="format" value="blue"class="block">
+        <label for="modern">Black</label>
+          <input type="radio" id="black" name="format" value="black" class="block">
+        <label for="legacy">Red</label>
+          <input type="radio" id="red" name="format" value="red" class="block">
+        <label for="standard">Green</label>
+          <input type="radio" id="green" name="format" value="green" class="block">
+      </fieldset>
+  <!--Selection of Formats Played via checkbox--> 
+      <fieldset class="fav-formats">
+        <label for="formats-played">Select all formats that you regularly play:</label>
+        <label for="cmdr">Commander</label>
+          <input type="checkbox" id="cmdr" name="format" value="cmdr">
+        <label for="casual">Casual</label>
+          <input type="checkbox" id="kitchen" name="format" value="casual">
+        <label for="modern">Modern</label>
+          <input type="checkbox" id="modern" name="format" value="modern">
+        <label for="legacy">Legacy</label>
+          <input type="checkbox" id="legacy" name="format" value="legacy">
+        <label for="standard">Standard</label>
+          <input type="checkbox" id="standard" name="format" value="standard">
+        <label for="standard">Pauper</label>
+          <input type="checkbox" id="pauper" name="format" value="pauper">
+      </fieldset>
+  <!--Textbox for relaying a personal story--> 
+      <fieldset class="exp">
+        <label name="comments">Share your favorite experience playing magic:</label>
+        <textarea></textarea>
+        </fieldset>
+  <!-- Submit Button-->
+      <div class="submit">      
+      <input type="submit" value="submit" id="submit">
+      </div>
+    </form>
+  </body>
+</html>  
+    
