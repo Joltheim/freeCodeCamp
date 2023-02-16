@@ -52,7 +52,7 @@ function convertToRoman(num) {
 convertToRoman(36);
 
 
-AI code suggestion
+/*AI code suggestion
 
 function convertToRoman(num) {
   let tempNum = num;
@@ -82,7 +82,5 @@ function convertToRoman(num) {
 
   console.log(romanNum);
   return romanNum;
-}
-
-convertToRoman(36);
+} */
 
