@@ -35,13 +35,14 @@ function rot13(str) {
       if (cipher[j].input === str[i]) {
         found = true;
         newStr += cipher[j].output
-        console.log(newStr)
+        //console.log(newStr)
       }
     }
       if (found == false) {
         newStr += str[i]
       }
   }
+  console.log(newStr)
   return newStr;
 }
 

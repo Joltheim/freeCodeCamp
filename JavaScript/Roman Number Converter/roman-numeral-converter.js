@@ -49,7 +49,7 @@ function convertToRoman(num) {
   return romanNum;
 }
 
-convertToRoman(36);
+convertToRoman(22);
 
 
 /*AI code suggestion
