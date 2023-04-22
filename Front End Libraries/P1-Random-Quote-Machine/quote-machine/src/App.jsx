@@ -33,8 +33,8 @@ const App = () => {
       <div id="quote-box">
       <h3 id="text">"{state.quote}"</h3>
       <h3 id="author">Author: {state.author}</h3>
-      <a id='tweet-quote' href={`https://twitter.com/intent/tweet?text=${state.quote}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'twitter']} /> Tweet This!</a>
-      <button id="new-quote" onClick={newQuote}>click for new quote</button>
+      <a id='tweet-quote' href={`https://twitter.com/intent/tweet?text=${state.quote} -${state.author}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'twitter']} /> Tweet This!</a>
+      <button id="new-quote" onClick={newQuote}>Next Quote</button>
       </div>
     </div>  
   )

@@ -39,8 +39,8 @@
 #quote-box {
   max-width: 500px;
   display: grid;
-  grid-template-columns: auto 1fr 1fr;
-  grid-template-rows: auto auto 1fr;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
 }
 
 #text {
@@ -51,7 +51,9 @@
 #new-quote {
   grid-column: 3 / 3;
   grid-row: 3 / 3;
-
+  max-width: 130px;
+  max-height: 50px;
+  background-color: white;
 }
 
 #tweet-quote {
