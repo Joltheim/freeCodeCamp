@@ -1,13 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
+import { quoteTable } from './data'
+import { backgroundColors } from './data'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+library.add(faTwitter);
 
-const quoteTable = [
-  {id: 1, quote: "In three words I can sum up everything I've learned about life: It Goes On.", author: "Robert Frost"},
-  {id: 2, quote: "The truth is everyone is going to hurt you, you just gotta find the one's worth suffering for." , author: "Bob Marley"},
-  {id: 3, quote: "When one door of happiness closes, another opens, but often we look so long at the closed door that we do not see the one that has been opened for us." , author: "Helen Keller"},
-  {id: 4, quote: "I know of no more encouraging fact than the unquestioned ability of a man to elevate his life by conscious endeavor." , author: "Henry David Thoreau"},
-  {id: 5, quote: "No one looks back on their lives and remembers the nights they got plenty of sleep." , author: "unknown"},
-]
 
 const randomSelect = () => {
   let ourMin = 0
@@ -16,21 +15,25 @@ const randomSelect = () => {
 }
 
 const App = () => {
+  const [backgroundColor, setBackgroundColor] = useState('');
   const [state, setState] = useState(() => {
     return quoteTable[randomSelect()]
   })
+
+  useEffect(() => {
+    setBackgroundColor(backgroundColors[Math.floor(Math.random() * backgroundColors.length)]);
+  });
 
   const newQuote = () => {
     setState(quoteTable[randomSelect()]);
   }
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor}}>
       <div id="quote-box">
       <h3 id="text">"{state.quote}"</h3>
       <h3 id="author">Author: {state.author}</h3>
-      {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
-      <a id='tweet-quote' href={`https://twitter.com/intent/tweet?text=${state.quote}`} target="_blank" rel="noopener noreferrer">Tweet this!</a>
+      <a id='tweet-quote' href={`https://twitter.com/intent/tweet?text=${state.quote}`} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={['fab', 'twitter']} /> Tweet This!</a>
       <button id="new-quote" onClick={newQuote}>click for new quote</button>
       </div>
     </div>  
