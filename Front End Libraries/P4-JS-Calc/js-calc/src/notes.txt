@@ -1,0 +1,35 @@
+Learning Notes
+
+1. I realized that you cannot use Math(some expression) to do Math...
+
+Here's the code I wrote
+
+const doMath = () => {
+    
+    //copy count state into splitStr var and split new array by operators
+    if (count.length !== 0) {
+      console.log('count: ' + count)
+      const convertedStr = []
+      const splitStr = count.slice().split(/(\+|\-|\*|\/)/)
+      console.log('split: ' + splitStr)
+
+    //iterate over splitStr array and convert appropriate strings to numbers
+      console.log('splitStrLength' + splitStr.length)
+      for (let i = 0; i < splitStr.length; i++) {
+        if (isNaN(parseInt(splitStr[i]))) {
+          convertedStr.push(splitStr[i].toString())
+          console.log('1: ' + splitStr[i])
+        } else {
+          convertedStr.push(parseInt(splitStr[i]))
+          console.log('2: ' + splitStr[i])
+        }
+      }
+      console.log('converted: ' + convertedStr)
+
+      let mathStr = convertedStr.join("")
+      console.log(mathStr)
+
+      let result = Math(mathStr)
+      console.log(result)
+    }
+  }
