@@ -61,3 +61,7 @@ function App() {
 }
 
 export default App
+
+//todo
+//1. Add EventListener for key presses (numpad)
+//2. Update CSS

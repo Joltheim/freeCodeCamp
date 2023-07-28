@@ -2,7 +2,7 @@ Learning Notes
 
 1. I realized that you cannot use Math(some expression) to do Math...
 
-Here's the code I wrote
+Here's the code I wrote originally
 
 const doMath = () => {
     
@@ -31,5 +31,13 @@ const doMath = () => {
 
       let result = Math(mathStr)
       console.log(result)
+    }
+  }
+
+  and the final copy below
+
+   const doMath = () => {
+    if (count.length !== 0) {
+      setResult(eval(count))
     }
   }
