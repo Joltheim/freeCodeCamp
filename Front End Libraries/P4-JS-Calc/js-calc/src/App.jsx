@@ -40,6 +40,7 @@ function App() {
           <button value='-' className='c-btn' onClick={concatValue}>-</button>
           <button value='*' className='c-btn' onClick={concatValue}>x</button>
           <button value='/' className='c-btn' onClick={concatValue}>/</button>
+  
         </div>
         <div className='c-numbers'>
           <div className='flex-row'>
@@ -57,16 +58,17 @@ function App() {
             <button value='2' className='c-btn' onClick={concatValue}>2</button>
             <button value='3' className='c-btn' onClick={concatValue}>3</button>
           </div>
+          <div className='flex-row'>
+            <button value='0' className='c-btn' onClick={concatValue}>0</button>
+            <button value='.' className='c-btn' onClick={concatValue}>.</button>
+            <button className='c-btn' onClick={backSpace}>undo</button>
+          </div>
+          <div className='flex-row'>
+
+            <button className='c-btn' onClick={clearScreen}>clear</button>
+            <button className='c-btn' onClick={doMath}>enter</button>
+          </div>
         </div>
-
-        <button onClick={backSpace}>undo</button>
-        <button className='c-btn' onClick={clearScreen}>clear</button>
-        <button className='c-btn' onClick={doMath}>enter</button>
-        <button value='(' className='c-btn' onClick={concatValue}>(</button>
-        <button value=')' className='c-btn' onClick={concatValue}>)</button>        
-        <button value='0' className='c-btn' onClick={concatValue}>0</button>
-        <button value='.' className='c-btn' onClick={concatValue}>.</button>
-
       </div>
     </>
   )
@@ -77,3 +79,6 @@ export default App
 //todo
 //1. Add EventListener for key presses (numpad)
 //2. Update CSS - work in progress
+
+{/* <button value=')' className='c-btn' onClick={concatValue}>)</button>
+<button value='(' className='c-btn' onClick={concatValue}>(</button>   */}

@@ -20,6 +20,7 @@ h2 {
 
 .calculator {
   margin: 2em auto auto auto;
+  padding-bottom: 1em;
   border-radius: 5%;
   display: flex;
   font-size: 1em;
@@ -34,31 +35,42 @@ h2 {
 }
 
 .c-formula, .c-screen {
-  margin-top: 1em;
+  border:#1a1a1a;
+  margin: .75em .75em 0em .75em;
   background-color: grey;
   width: 100%;
-  height: 3em;
-  border-radius: 5px;
+  height: 2.5em;
+  border-radius: 10px;
   text-align: center;
   padding-top: 1em;
+  font-size: 1.5em;
 }
 
 .operators {
   display: flex;
   justify-content: center;
-  width: 100%
+  width: 90%;
+  height: 15%;
 }
 
 .operators .c-btn {
-  gap: 10px;
+  flex-grow: 1;
 }
 
 .c-numbers {
-  flex: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.c-numbers .flex-row {
+  display: flex;
+  width: 90%;
+}
+
+.c-numbers .flex-row .c-btn {
+  flex-grow: 1;
 }
 
 
@@ -66,7 +78,7 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
