@@ -76,4 +76,4 @@ export default App
 
 //todo
 //1. Add EventListener for key presses (numpad)
-//2. Update CSS
+//2. Update CSS - work in progress
