@@ -32,29 +32,41 @@ function App() {
 
   return (
     <>
+      <h2>JS-Calc-Project</h2>
       <div className='calculator'>
-        <div className='c-formula'>{count}</div>
-        <div className='c-screen'>{result}</div>
-        <button value='7' className='c-btn' onClick={concatValue}>7</button>
-        <button value='8' className='c-btn' onClick={concatValue}>8</button>
-        <button value='9' className='c-btn' onClick={concatValue}>9</button>
-        <button value='+' className='c-btn' onClick={concatValue}>+</button>
-        <button value='4' className='c-btn' onClick={concatValue}>4</button>
-        <button value='5' className='c-btn' onClick={concatValue}>5</button>
-        <button value='6' className='c-btn' onClick={concatValue}>6</button>
-        <button value='-' className='c-btn' onClick={concatValue}>-</button>
-        <button value='1' className='c-btn' onClick={concatValue}>1</button>
-        <button value='2' className='c-btn' onClick={concatValue}>2</button>
-        <button value='3' className='c-btn' onClick={concatValue}>3</button>
-        <button value='*' className='c-btn' onClick={concatValue}>*</button>
-        <button value='0' className='c-btn' onClick={concatValue}>0</button>
-        <button value='.' className='c-btn' onClick={concatValue}>.</button>
-        <button className='c-btn' onClick={backSpace}>undo</button>
-        <button value='/' className='c-btn' onClick={concatValue}>/</button>
-        <button value='(' className='c-btn' onClick={concatValue}>(</button>
-        <button value=')' className='c-btn' onClick={concatValue}>)</button>
+        <div className='c-formula'>{count} {result}</div>
+        <div className='operators'>
+          <button value='+' className='c-btn' onClick={concatValue}>+</button>
+          <button value='-' className='c-btn' onClick={concatValue}>-</button>
+          <button value='*' className='c-btn' onClick={concatValue}>x</button>
+          <button value='/' className='c-btn' onClick={concatValue}>/</button>
+        </div>
+        <div className='c-numbers'>
+          <div className='flex-row'>
+            <button value='7' className='c-btn' onClick={concatValue}>7</button>
+            <button value='8' className='c-btn' onClick={concatValue}>8</button>
+            <button value='9' className='c-btn' onClick={concatValue}>9</button>
+          </div>
+          <div className='flex-row'>
+            <button value='4' className='c-btn' onClick={concatValue}>4</button>
+            <button value='5' className='c-btn' onClick={concatValue}>5</button>
+            <button value='6' className='c-btn' onClick={concatValue}>6</button>
+          </div>
+          <div className='flex-row'>
+            <button value='1' className='c-btn' onClick={concatValue}>1</button>
+            <button value='2' className='c-btn' onClick={concatValue}>2</button>
+            <button value='3' className='c-btn' onClick={concatValue}>3</button>
+          </div>
+        </div>
+
+        <button onClick={backSpace}>undo</button>
         <button className='c-btn' onClick={clearScreen}>clear</button>
         <button className='c-btn' onClick={doMath}>enter</button>
+        <button value='(' className='c-btn' onClick={concatValue}>(</button>
+        <button value=')' className='c-btn' onClick={concatValue}>)</button>        
+        <button value='0' className='c-btn' onClick={concatValue}>0</button>
+        <button value='.' className='c-btn' onClick={concatValue}>.</button>
+
       </div>
     </>
   )
