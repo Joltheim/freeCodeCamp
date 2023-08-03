@@ -50,7 +50,6 @@ h2 {
   display: flex;
   justify-content: center;
   width: 90%;
-  height: 15%;
 }
 
 .operators .c-btn {
@@ -58,6 +57,7 @@ h2 {
 }
 
 .c-numbers {
+  margin-top: -8px;
   display: flex;
   flex-direction: column;
   align-items: center;

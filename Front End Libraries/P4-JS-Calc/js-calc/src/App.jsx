@@ -1,22 +1,26 @@
 import { useState } from 'react'
 
 function App() {
-  const [count, setCount] = useState([])
-  const [result, setResult] = useState()
+  const [count, setCount] = useState('')
+  const [result, setResult] = useState(0)
 
   //Create String of userInput Values
   const concatValue = (e) => {
     const lastChar = count[count.length - 1]
-      if (lastChar != '+' && lastChar != '-' && lastChar != '*' && lastChar != '/') {
+    if(count[0] == 0 && e.target.value == 0) {
+      return
+    } else {
+      if (lastChar != '+' && lastChar != '-' && lastChar != '*' && lastChar != '/'  && lastChar != '.') {
         setCount(count + e.target.value)
-      } else if (e.target.value != '+' && e.target.value != '-' && e.target.value != '*' && e.target.value != '/' ) {
+      } else if (e.target.value != '+' && e.target.value != '-' && e.target.value != '*' && e.target.value != '/') {
         setCount(count + e.target.value)
       }
+    }
   }
 
   const clearScreen = () => {
-    setCount([])
-    setResult()
+    setCount('')
+    setResult(0)
   }
 
   const backSpace = () => {
@@ -29,44 +33,44 @@ function App() {
       setResult(eval(count))
     }
   }
-
+  
   return (
     <>
       <h2>JS-Calc-Project</h2>
       <div className='calculator'>
-        <div className='c-formula'>{count} {result}</div>
+        <div id='display' className='c-formula'>{count !== '' ? count : result} {result || null}</div>
+        {/* {count !== '' ? (result !== 0 ? result : count) : result} */}
+        {/* {count !== '' ? count : result} {result || null} */}
         <div className='operators'>
-          <button value='+' className='c-btn' onClick={concatValue}>+</button>
-          <button value='-' className='c-btn' onClick={concatValue}>-</button>
-          <button value='*' className='c-btn' onClick={concatValue}>x</button>
-          <button value='/' className='c-btn' onClick={concatValue}>/</button>
-  
+          <button id='add' value='+' className='c-btn' onClick={concatValue}>+</button>
+          <button id='subtract' value='-' className='c-btn' onClick={concatValue}>-</button>
+          <button id='multiply' value='*' className='c-btn' onClick={concatValue}>x</button>
+          <button id='divide' value='/' className='c-btn' onClick={concatValue}>/</button>
         </div>
         <div className='c-numbers'>
           <div className='flex-row'>
-            <button value='7' className='c-btn' onClick={concatValue}>7</button>
-            <button value='8' className='c-btn' onClick={concatValue}>8</button>
-            <button value='9' className='c-btn' onClick={concatValue}>9</button>
+            <button id='seven' value='7' className='c-btn' onClick={concatValue}>7</button>
+            <button id='eight' value='8' className='c-btn' onClick={concatValue}>8</button>
+            <button id='nine' value='9' className='c-btn' onClick={concatValue}>9</button>
           </div>
           <div className='flex-row'>
-            <button value='4' className='c-btn' onClick={concatValue}>4</button>
-            <button value='5' className='c-btn' onClick={concatValue}>5</button>
-            <button value='6' className='c-btn' onClick={concatValue}>6</button>
+            <button id='four' value='4' className='c-btn' onClick={concatValue}>4</button>
+            <button id='five' value='5' className='c-btn' onClick={concatValue}>5</button>
+            <button id='six' value='6' className='c-btn' onClick={concatValue}>6</button>
           </div>
           <div className='flex-row'>
-            <button value='1' className='c-btn' onClick={concatValue}>1</button>
-            <button value='2' className='c-btn' onClick={concatValue}>2</button>
-            <button value='3' className='c-btn' onClick={concatValue}>3</button>
+            <button id='one' value='1' className='c-btn' onClick={concatValue}>1</button>
+            <button id='two' value='2' className='c-btn' onClick={concatValue}>2</button>
+            <button id='three' value='3' className='c-btn' onClick={concatValue}>3</button>
           </div>
           <div className='flex-row'>
-            <button value='0' className='c-btn' onClick={concatValue}>0</button>
-            <button value='.' className='c-btn' onClick={concatValue}>.</button>
-            <button className='c-btn' onClick={backSpace}>undo</button>
+            <button id='zero' value='0' className='c-btn' onClick={concatValue}>0</button>
+            <button id='decimal' value='.' className='c-btn' onClick={concatValue}>.</button>
+            <button className='c-btn' onClick={backSpace}>←</button>
           </div>
           <div className='flex-row'>
-
-            <button className='c-btn' onClick={clearScreen}>clear</button>
-            <button className='c-btn' onClick={doMath}>enter</button>
+            <button id='clear' className='c-btn' onClick={clearScreen}>clear</button>
+            <button id='equals' className='c-btn' onClick={doMath}>=</button>
           </div>
         </div>
       </div>
@@ -77,8 +81,11 @@ function App() {
 export default App
 
 //todo
-//1. Add EventListener for key presses (numpad)
-//2. Update CSS - work in progress
+//1. Add EventListener for key presses (numpad) - Difficulty outside scope of project - cancelled
+//2. Update CSS - Done
+//3. Test project for validation in FreeCodeCamp
 
-{/* <button value=')' className='c-btn' onClick={concatValue}>)</button>
-<button value='(' className='c-btn' onClick={concatValue}>(</button>   */}
+//Optional. 
+//4. Change display so that it shows default values and equals sign. 
+
+
