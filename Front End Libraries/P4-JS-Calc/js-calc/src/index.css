@@ -34,22 +34,17 @@ h2 {
   flex-wrap: wrap;
 }
 
-.c-formula, .c-screen {
+.c-formula {
   border:#1a1a1a;
   margin: .75em .75em 0em .75em;
   background-color: grey;
-  width: 100%;
+  max-width: 90%;
+  width: 90%;
   height: 2.5em;
   border-radius: 10px;
   text-align: center;
   padding-top: 1em;
   font-size: 1.5em;
-}
-
-.operators {
-  display: flex;
-  justify-content: center;
-  width: 90%;
 }
 
 .operators .c-btn {

@@ -41,13 +41,13 @@ function App() {
         <div id='display' className='c-formula'>{count !== '' ? count : result} {result || null}</div>
         {/* {count !== '' ? (result !== 0 ? result : count) : result} */}
         {/* {count !== '' ? count : result} {result || null} */}
-        <div className='operators'>
-          <button id='add' value='+' className='c-btn' onClick={concatValue}>+</button>
-          <button id='subtract' value='-' className='c-btn' onClick={concatValue}>-</button>
-          <button id='multiply' value='*' className='c-btn' onClick={concatValue}>x</button>
-          <button id='divide' value='/' className='c-btn' onClick={concatValue}>/</button>
-        </div>
         <div className='c-numbers'>
+          <div className='flex-row'>
+            <button id='add' value='+' className='c-btn' onClick={concatValue}>+</button>
+            <button id='subtract' value='-' className='c-btn' onClick={concatValue}>-</button>
+            <button id='multiply' value='*' className='c-btn' onClick={concatValue}>x</button>
+            <button id='divide' value='/' className='c-btn' onClick={concatValue}>/</button>
+          </div>
           <div className='flex-row'>
             <button id='seven' value='7' className='c-btn' onClick={concatValue}>7</button>
             <button id='eight' value='8' className='c-btn' onClick={concatValue}>8</button>
