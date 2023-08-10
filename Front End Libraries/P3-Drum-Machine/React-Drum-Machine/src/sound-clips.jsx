@@ -9,23 +9,13 @@ import KicknHat from './assets/Kick_n_Hat.mp3'
 import Kick1 from './assets/Kick-1.mp3'
 
 export const soundClips = [
-    {name: 'Cev', audio: Cev},
-    {name: 'Dsc_Oh', audio: Dsc_Oh },
-    {name: 'Heater-1', audio: Heater1},
-    {name: 'Heater-2', audio: Heater2},
-    {name: 'Heater-3', audio: Heater3},
-    {name: 'Heater-4', audio: Heater4},
-    {name: 'Heater-5', audio: Heater5},
-    {name: 'KicknHat', audio: KicknHat },
-    {name: 'Kick-1', audio: Kick1},
+    {id: 'cev', name: 'Cev', audio: Cev},
+    {id: 'dsc', name: 'Dsc_Oh', audio: Dsc_Oh },
+    {id: 'h1', name: 'Heater-1', audio: Heater1},
+    {id: 'h2', name: 'Heater-2', audio: Heater2},
+    {id: 'h3', name: 'Heater-3', audio: Heater3},
+    {id: 'h4', name: 'Heater-4', audio: Heater4},
+    {id: 'h5', name: 'Heater-5', audio: Heater5},
+    {id: 'knh', name: 'KicknHat', audio: KicknHat },
+    {id: 'k1', name: 'Kick-1', audio: Kick1},
 ]
-
-  // console.log(soundClips[0].audio)
-
-  // useEffect(() => {
-  //   const playSound = (value) => {
-  //     const audio = new Audio(soundClips[value].audio);
-  //     audio.play();
-  //   }
-  //   playSound()
-  // }, [])
