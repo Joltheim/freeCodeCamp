@@ -5,6 +5,7 @@ function App() {
   const [display, setDisplay] = useState('')
   const [volume, setVolume] = useState(0.5)
 
+  //NOTE - playSound() - Currently Broken
   const playSound = (id) => {
     const soundFound = soundClips.find(clip => clip.id === id)
     if(soundFound) {
