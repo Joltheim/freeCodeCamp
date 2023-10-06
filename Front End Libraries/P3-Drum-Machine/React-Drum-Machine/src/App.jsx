@@ -4,31 +4,24 @@ import { useState, useEffect } from 'react'
 function App() {
   const [display, setDisplay] = useState('')
   const [volume, setVolume] = useState(0.5)
+  const [power, setPower] = useState(true)
 
+  //Query document and play audio if soundclip found ♪ ♫ ♪
   const playSound = (id) => {
-    const audioElement = document.getElementById(id);
-    console.log(id)
-    console.log(audioElement)
-    if (audioElement) {
-      audioElement.currentTime = 0;
-      audioElement.volume = volume;
-      audioElement.play();
+    if (!power) {
+      return
+    } 
+    const audioParentElement = document.getElementById(id);
+    const audioChildElement = audioParentElement.querySelector('audio')
+    if (audioChildElement) {
+      audioChildElement.currentTime = 0;
+      audioChildElement.volume = volume;
+      audioChildElement.play();
       setDisplay(id);
     } else {
-      console.log('not found')
+      console.log('audio not found')
     }
   };
-
-  // const playSound = (id) => {
-  //   const soundFound = soundClips.find(clip => clip.id === id)
-  //   if(soundFound) {
-  //     const audio = new Audio(soundFound.audio);
-  //         audio.volume = volume
-  //         audio.play();
-  //         console.log(audio)
-  //         setDisplay(soundFound.id)
-  //   }
-  // }
 
   //Handle Key Presses for Drumpad
   useEffect(() => {
@@ -110,18 +103,25 @@ function App() {
           </div>
         </div>
         <div className='flex-column'>
-          <div className='power-switch'>
-            <h3>power:</h3>
-            <input max='1' min='0' type='checkbox'></input>
+          <div className="flex-row">
+              <h3>Power:</h3>
+              <label className="toggle-switch">
+                <input checked={power} onChange={() => setPower(!power)} type="checkbox"/>
+                <span className="slider"></span>
+              </label>
           </div>
-          <h3 id='display'>key: {display}</h3>
-          <div className='volume-slider'>
-            <h3>volume:</h3>
-            <input max='1' min='0' type='range' step='.01' value={volume} onChange={(e) => setVolume(parseFloat(e.target.value))}></input>
+          <div className='flex-row'>
+            <h3>Key:</h3>
+            <h3 id='display'>{display}</h3>
+          </div>
+          <div className='flex-row'>
+            <div className='volume-slider'>
+              <h3>Volume:</h3>
+              <input max='1' min='0' type='range' step='.01' value={volume} onChange={(e) => setVolume(parseFloat(e.target.value))}></input>
+            </div>
           </div>
         </div>
       </div>
-      
     </>
   )
 }
@@ -131,5 +131,5 @@ export default App
 //Todo
 //1. Add unique IDs to sound array & change reference - done
 //2. add an event listener to page that enables keypress - done
-//3. Run FCC tests and update as needed to pass (tests 5 & 6 are a nightmare to troubleshoot)
-//4. Flesh Out Right Side Column with appropriate content
+//3. Run FCC tests and update as needed to pass - done
+//4. Flesh Out Right Side Column with appropriate content - done
