@@ -1,14 +1,22 @@
 import { soundClips } from "./sound-clips";
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 function App() {
   const [display, setDisplay] = useState('')
   const [volume, setVolume] = useState(0.5)
   const [power, setPower] = useState(true)
 
+  // Create a ref to store the current power state
+  const powerRef = useRef(power);
+
+  // Update the ref when the power state changes
+  useEffect(() => {
+    powerRef.current = power;
+  }, [power]);
+
   //Query document and play audio if soundclip found ♪ ♫ ♪
   const playSound = (id) => {
-    if (!power) {
+    if (!powerRef.current) {
       return
     } 
     const audioParentElement = document.getElementById(id);
@@ -26,6 +34,11 @@ function App() {
   //Handle Key Presses for Drumpad
   useEffect(() => {
     const handleKeyDown = (e) => {
+      if (!powerRef.current) {
+        return
+      } else {
+        console.log(power)
+      }
       switch(e.key.toLowerCase()) {
         case 'q':
           playSound('cev');
@@ -53,7 +66,9 @@ function App() {
           break;     
         case 'c':
           playSound('k1');
-          break;   
+          break;
+        default:
+          break;
       }
     }
 
