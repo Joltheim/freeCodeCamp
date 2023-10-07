@@ -15,10 +15,10 @@
       powerRef.current = power;
     }, [power]);
 
-      // Update the ref when the volume state changes
-      useEffect(() => {
-        volumeRef.current = volume;
-      }, [volume]);
+    // Update the ref when the volume state changes
+    useEffect(() => {
+      volumeRef.current = volume;
+    }, [volume]);
 
     //Query document and play audio if soundclip found ♪ ♫ ♪
     const playSound = (id) => {
@@ -42,9 +42,7 @@
       const handleKeyDown = (e) => {
         if (!powerRef.current) {
           return
-        } else {
-          console.log(power)
-        }
+        } 
         switch(e.key.toLowerCase()) {
           case 'q':
             playSound('cev');
