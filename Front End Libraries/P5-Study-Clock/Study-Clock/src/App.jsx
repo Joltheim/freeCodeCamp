@@ -37,7 +37,7 @@ function App() {
       return;
     }
   
-    let studyTimerSeconds = studyTimer * 60;
+    let studyTimerSeconds = studyTimer * 5;
   
     const countdownInterval = setInterval(() => {
       if (studyTimerSeconds > 0) {
