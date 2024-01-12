@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(37, 33, 33);
+    color: rgb(173, 166, 166);
+    text-align: center;
+}
+
+img {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.container {
+    display: flex;
+}
+
+button {
+    min-height: 30px;
+    min-width: 40px;
+    background-color: orange;
+}
+
+input {
+    border-radius: 10px;
+    height: 1.8em;
+    text-align:center;
+}
