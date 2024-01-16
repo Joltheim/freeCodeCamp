@@ -24,3 +24,18 @@ input {
     height: 1.8em;
     text-align:center;
 }
+
+#palindrome-definition {
+    border: grey solid;
+    max-width: 250px;
+    align-content: center;
+    margin: 1.5rem auto;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
+#result {
+    margin: 1em auto;
+    font-size: 1.5em;
+    max-width: 250px;
+}

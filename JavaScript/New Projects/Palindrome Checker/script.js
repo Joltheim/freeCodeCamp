@@ -4,17 +4,19 @@ const result = document.getElementById("result")
 let defaultState = ""
 
 const checkInput = () => {
-    //check if empty string (no input)
-    if (userSubmit.value.length == 0) {
-        alert("Please input a value")
-    } else if (userSubmit.value === userSubmit.value
-        .split("").reverse().join("")) {
-            result.innerText = `${userSubmit.value}'s a palindrome!`
+    let regex = /[^a-zA-Z0-9]/g
+    let filteredStr = userSubmit.value.replace(regex, "").toLowerCase()
+    console.log(filteredStr)
+
+    if (userSubmit.value.length == 0) { alert("Please input a value")}
+    if (filteredStr === filteredStr.split("").reverse().join("")) {
+            result.innerText = `${userSubmit.value} is a palindrome!`
             userSubmit.value = defaultState
     } else {
-        result.innerText = `Sorry ${userSubmit.value}'s not a palindrome`
+        result.innerText = `${userSubmit.value} is not a palindrome`
         userSubmit.value = defaultState
     }
+    
 }
 
 checkButton.addEventListener("click", checkInput)
