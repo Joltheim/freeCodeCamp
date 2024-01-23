@@ -1,0 +1,57 @@
+img {
+    max-height: 200px;
+    max-width: 300px;
+    margin-top: 2em;
+}
+
+body {
+    text-align: center;
+    margin: auto;
+    background-color: black;
+    color: white;
+}
+
+.phone-container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    justify-content: center;
+    border: 2px solid white;
+    padding: 5%;
+    border-radius: 20px;
+}
+
+#results-div {
+    min-height: 250px;
+}
+
+input {
+    width: 80%;
+    height: 2rem;
+    text-align: center;
+}
+
+.phone-screen {
+    background-color: rgb(189, 177, 177);
+    color: black;
+}
+
+button {
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+#camera {
+    background-color: white;
+    min-height: 10px;
+    min-width: 10px;
+    margin: 0 auto 20px auto;
+    border-radius: 100%;
+}
+
+#credits {
+    color: white;
+    margin-top: 2em;
+}
