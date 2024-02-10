@@ -18,10 +18,13 @@ const enterKey = (e) => {
 }
 
 const checkValidity = () => {
-
+    //add userInput to phone # array & keep limit to 5
     phoneNumberArr.unshift(userInput.value)
-    if(phoneNumberArr.length > 5) {phoneNumberArr.pop()}
+    if(phoneNumberArr.length > 5) {
+        phoneNumberArr.pop()
+    }
 
+    //error popup for empty userInput field
     if(!userInput.value) {
         alert("Please provide a phone number")
         return
@@ -32,15 +35,12 @@ const checkValidity = () => {
 
     //returned HTML    
         resultsField.innerHTML = phoneNumberArr.map((str) => {
-            if(!regExp.test(str)) {
-                return `<p>Invalid US number: ${str}</p>`
-            } else {
-                return `<p>Valid US number: ${str}</p>`
-            }
+            let isValid = regExp.test(str)
+            regExp.lastIndex = 0;
+            return `<p>${isValid ? "Valid" : "Invalid"} US number: ${str}</p>`
     }).join('')
 }
 
 checkBtn.addEventListener("click", checkValidity )
 document.addEventListener("keydown", enterKey)
 clearBtn.addEventListener("click", clearNumbers)
-
